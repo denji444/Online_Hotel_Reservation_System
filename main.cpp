@@ -163,6 +163,15 @@ public:
     }
 };
 
+class SearchFilter {
+private:
+    string type;
+public:
+    SearchFilter(const string& type) : type(type) {}
+
+    string getType() const { return type; }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -241,6 +250,11 @@ int main() {
   // User login
             User user("Bilal Saleem", "password123");
             user.displayUserInfo();
+            
+  // SearchFilter
+            cout << "Searching for room.... " << endl;
+            SearchFilter filter("Standard");
+            cout << "Search Filter Type: " << filter.getType() << endl;
 
       
     return 0;
