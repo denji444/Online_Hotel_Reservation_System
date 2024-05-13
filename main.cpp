@@ -228,6 +228,33 @@ public:
     }
 };
 
+class RoomReservation {
+private:
+    string roomName;
+    string user;
+    string checkInDate;
+    string checkOutDate;
+public:
+    RoomReservation(const string& roomName, const string& user, const string& checkInDate, const string& checkOutDate)
+        : roomName(roomName), user(user), checkInDate(checkInDate), checkOutDate(checkOutDate) {}
+
+    string getRoomName() const {
+        return roomName;
+    }
+
+    string getUser() const {
+        return user;
+    }
+
+    string getCheckInDate() const {
+        return checkInDate;
+    }
+
+    string getCheckOutDate() const {
+        return checkOutDate;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -336,6 +363,13 @@ int main() {
             PaymentSystem paymentSystem1("Bank transfer");
             cout << "Payment System Provider: " << paymentSystem1.getProvider() << endl;          
 	    cout << endl;
+           
+  // RoomReservation
+            RoomReservation reservation("Standard Room", "Farhan", "2024-05-15", "2024-05-20");
+            cout << "Room Name: " << reservation.getRoomName() << endl;
+            cout << "User: " << reservation.getUser() << endl;
+            cout << "Check-in Date: " << reservation.getCheckInDate() << endl;
+            cout << "Check-out Date: " << reservation.getCheckOutDate() << endl;
 
       
     return 0;
