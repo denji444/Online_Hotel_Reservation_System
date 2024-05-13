@@ -58,14 +58,26 @@ public:
     }
 };
 
+
 class User {
 private:
     string name;
+    string password;
+    vector<string> bookings;
 public:
-    User(const string& name) : name(name) {}
+    User(const string& name, const string& password) : name(name), password(password) {}
+    
+    void displayUserInfo() const {
+        cout << "User Name: " << name << endl;
+        cout << "Password: " << password << endl;
+    }
 
-    string getName() const {
-        return name;
+    void addBooking(const string& booking) {
+        bookings.push_back(booking);
+    }
+
+    const vector<string>& getBookings() const {
+        return bookings;
     }
 };
 
@@ -225,6 +237,11 @@ int main() {
   	    Payment payment("Credit Card", 1000);
 	    // Process the payment
     	    payment.processPayment();
+            
+  // User login
+            User user("Bilal Saleem", "password123");
+            user.displayUserInfo();
+
       
     return 0;
 }
