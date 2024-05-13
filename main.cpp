@@ -100,6 +100,17 @@ public:
     }
 };
 
+class Discount {
+private:
+    double amount;
+public:
+    Discount(double amount) : amount(amount) {}
+
+    double getAmount() const {
+        return amount;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -146,6 +157,14 @@ int main() {
             RateManager rateManager(0.1);
             rateManager.updateRate(3000);
             cout << "Updated Rate: " << rateManager.getRate() << endl;
+           
+  // Discount
+            cout<< endl;
+            cout << "GENERATING DISCOUNTS :" << endl;
+            Discount discount(2000);
+            cout<< endl;
+            cout << "Discount amount: " << discount.getAmount() << endl;
+      
  
     return 0;
 }
