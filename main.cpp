@@ -217,6 +217,17 @@ public:
     }
 };
 
+class PaymentSystem {
+private:
+    string provider;
+public:
+    PaymentSystem(const string& provider) : provider(provider) {}
+
+    string getProvider() const {
+        return provider;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -317,6 +328,14 @@ int main() {
             cout << "Canceling Booking... " << endl;
             CancellationPolicy policy("Free cancellation up to 24 hours before check-in");
             cout << "Cancellation Policy: " << policy.getPolicy() << endl;
+           
+  // PaymentSystem
+            cout << "Payment options... " << endl; 
+            PaymentSystem paymentSystem("PayPal");
+            cout << "Payment System Provider: " << paymentSystem.getProvider() << endl;
+            PaymentSystem paymentSystem1("Bank transfer");
+            cout << "Payment System Provider: " << paymentSystem1.getProvider() << endl;          
+	    cout << endl;
 
       
     return 0;
