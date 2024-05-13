@@ -122,6 +122,22 @@ public:
     }
 };
 
+class Report {
+private:
+    vector<string> data;
+public:
+    Report(const vector<string>& data) : data(data) {}
+
+    void generateReport() {
+        cout << "Generating report..." << endl;
+        // Output report data
+        for (size_t i = 0; i < data.size(); ++i) {
+            cout << data[i] << endl;
+        }
+        cout << "Report generation complete." << endl;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -180,6 +196,17 @@ int main() {
   	    Promotion promotion("Free upgrade to premium package");
             // Access the promotion description and print it
     	    cout << "Promotion description: " << promotion.getDescription() << endl;
+            
+  // Report
+            cout << endl;
+            cout << "GENERATING REPORTS... :" << endl;
+            vector<string> reportData;
+            reportData.push_back("Entry 1");
+            reportData.push_back("Entry 2");
+            reportData.push_back("Entry 3");
+            Report report(reportData);
+            report.generateReport();
+            cout << endl;
       
     return 0;
 }
