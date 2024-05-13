@@ -190,6 +190,71 @@ public:
     }
 };
 
+class Review {
+private:
+    string comment;
+    int rating;
+public:
+    Review(const string& comment, int rating) : comment(comment), rating(rating) {}
+    
+    string getComment() const {
+        return comment;
+    }
+
+    int getRating() const {
+        return rating;
+    }
+};
+
+class CancellationPolicy {
+private:
+    string policy;
+public:
+    CancellationPolicy(const string& policy) : policy(policy) {}
+
+    string getPolicy() const {
+        return policy;
+    }
+};
+
+class PaymentSystem {
+private:
+    string provider;
+public:
+    PaymentSystem(const string& provider) : provider(provider) {}
+
+    string getProvider() const {
+        return provider;
+    }
+};
+
+class RoomReservation {
+private:
+    string roomName;
+    string user;
+    string checkInDate;
+    string checkOutDate;
+public:
+    RoomReservation(const string& roomName, const string& user, const string& checkInDate, const string& checkOutDate)
+        : roomName(roomName), user(user), checkInDate(checkInDate), checkOutDate(checkOutDate) {}
+
+    string getRoomName() const {
+        return roomName;
+    }
+
+    string getUser() const {
+        return user;
+    }
+
+    string getCheckInDate() const {
+        return checkInDate;
+    }
+
+    string getCheckOutDate() const {
+        return checkOutDate;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -279,6 +344,32 @@ int main() {
             Booking booking("2024-05-12", "2024-05-15");
             cout << "Check-In Date: " << booking.getCheckInDate() << endl;
             cout << "Check-Out Date: " << booking.getCheckOutDate() << endl;
+            
+  // Review
+            cout << "Submitting review... " << endl;
+            Review review("Great hotel, excellent service!", 5);
+            cout << "Review Comment: " << review.getComment() << endl;
+            cout << "Review Rating: " << review.getRating() << " stars" << endl;
+            
+  // CancellationPolicy
+            cout << "Canceling Booking... " << endl;
+            CancellationPolicy policy("Free cancellation up to 24 hours before check-in");
+            cout << "Cancellation Policy: " << policy.getPolicy() << endl;
+           
+  // PaymentSystem
+            cout << "Payment options... " << endl; 
+            PaymentSystem paymentSystem("PayPal");
+            cout << "Payment System Provider: " << paymentSystem.getProvider() << endl;
+            PaymentSystem paymentSystem1("Bank transfer");
+            cout << "Payment System Provider: " << paymentSystem1.getProvider() << endl;          
+	    cout << endl;
+           
+  // RoomReservation
+            RoomReservation reservation("Standard Room", "Farhan", "2024-05-15", "2024-05-20");
+            cout << "Room Name: " << reservation.getRoomName() << endl;
+            cout << "User: " << reservation.getUser() << endl;
+            cout << "Check-in Date: " << reservation.getCheckInDate() << endl;
+            cout << "Check-out Date: " << reservation.getCheckOutDate() << endl;
 
       
     return 0;
