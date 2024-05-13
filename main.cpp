@@ -172,6 +172,24 @@ public:
     string getType() const { return type; }
 };
 
+class Booking {
+private:
+    string checkInDate;
+    string checkOutDate;
+
+public:
+    Booking(const string& checkInDate, const string& checkOutDate) 
+        : checkInDate(checkInDate), checkOutDate(checkOutDate) {}
+    
+    string getCheckInDate() const {
+        return checkInDate;
+    }
+
+    string getCheckOutDate() const {
+        return checkOutDate;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -255,6 +273,12 @@ int main() {
             cout << "Searching for room.... " << endl;
             SearchFilter filter("Standard");
             cout << "Search Filter Type: " << filter.getType() << endl;
+            
+  // Booking
+            cout << "BOOKING ROOM... :" << endl;
+            Booking booking("2024-05-12", "2024-05-15");
+            cout << "Check-In Date: " << booking.getCheckInDate() << endl;
+            cout << "Check-Out Date: " << booking.getCheckOutDate() << endl;
 
       
     return 0;
