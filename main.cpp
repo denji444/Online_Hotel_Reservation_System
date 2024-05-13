@@ -111,6 +111,17 @@ public:
     }
 };
 
+class Promotion {
+private:
+    string description;
+public:
+    Promotion(const string& description) : description(description) {}
+
+    string getDescription() const {
+        return description;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -164,7 +175,11 @@ int main() {
             Discount discount(2000);
             cout<< endl;
             cout << "Discount amount: " << discount.getAmount() << endl;
+    
+  // Create a Promotion object with a description
+  	    Promotion promotion("Free upgrade to premium package");
+            // Access the promotion description and print it
+    	    cout << "Promotion description: " << promotion.getDescription() << endl;
       
- 
     return 0;
 }
