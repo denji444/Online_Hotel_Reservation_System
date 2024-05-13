@@ -138,6 +138,19 @@ public:
     }
 };
 
+class Payment {
+private:
+    string paymentMethod;
+    double amount;
+public:
+    Payment(const string& paymentMethod, double amount) : paymentMethod(paymentMethod), amount(amount) {}
+
+    void processPayment() {
+        cout << "Processing payment of " << amount << " via " << paymentMethod << endl;
+        // Additional payment processing logic here
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -207,6 +220,11 @@ int main() {
             Report report(reportData);
             report.generateReport();
             cout << endl;
+    
+  // Create an instance of the Payment class
+  	    Payment payment("Credit Card", 1000);
+	    // Process the payment
+    	    payment.processPayment();
       
     return 0;
 }
