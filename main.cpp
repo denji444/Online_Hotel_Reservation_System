@@ -206,6 +206,17 @@ public:
     }
 };
 
+class CancellationPolicy {
+private:
+    string policy;
+public:
+    CancellationPolicy(const string& policy) : policy(policy) {}
+
+    string getPolicy() const {
+        return policy;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -301,6 +312,11 @@ int main() {
             Review review("Great hotel, excellent service!", 5);
             cout << "Review Comment: " << review.getComment() << endl;
             cout << "Review Rating: " << review.getRating() << " stars" << endl;
+            
+  // CancellationPolicy
+            cout << "Canceling Booking... " << endl;
+            CancellationPolicy policy("Free cancellation up to 24 hours before check-in");
+            cout << "Cancellation Policy: " << policy.getPolicy() << endl;
 
       
     return 0;
