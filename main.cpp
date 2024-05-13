@@ -85,6 +85,21 @@ public:
     }
 };
 
+class RateManager {
+private:
+    double rate;
+public:
+    RateManager(double rate) : rate(rate) {}
+
+    void updateRate(double newRate) {
+        rate = newRate;
+    }
+
+    double getRate() const {
+        return rate;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -125,7 +140,12 @@ int main() {
             cout << "Assigned Room Type: " << roomAssignment1.getRoom().getType() << endl;
             cout << "Assigned Room Price: " << roomAssignment1.getRoom().getPrice() << endl;
             cout << "Assigned User: " << roomAssignment1.getUser().getName() << endl;
-   
 
+   // RateManager
+            cout << "Managing rates... :" << endl;  
+            RateManager rateManager(0.1);
+            rateManager.updateRate(3000);
+            cout << "Updated Rate: " << rateManager.getRate() << endl;
+ 
     return 0;
 }
