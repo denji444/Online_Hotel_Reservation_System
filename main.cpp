@@ -190,6 +190,22 @@ public:
     }
 };
 
+class Review {
+private:
+    string comment;
+    int rating;
+public:
+    Review(const string& comment, int rating) : comment(comment), rating(rating) {}
+    
+    string getComment() const {
+        return comment;
+    }
+
+    int getRating() const {
+        return rating;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -279,6 +295,12 @@ int main() {
             Booking booking("2024-05-12", "2024-05-15");
             cout << "Check-In Date: " << booking.getCheckInDate() << endl;
             cout << "Check-Out Date: " << booking.getCheckOutDate() << endl;
+            
+  // Review
+            cout << "Submitting review... " << endl;
+            Review review("Great hotel, excellent service!", 5);
+            cout << "Review Comment: " << review.getComment() << endl;
+            cout << "Review Rating: " << review.getRating() << " stars" << endl;
 
       
     return 0;
