@@ -58,6 +58,33 @@ public:
     }
 };
 
+class User {
+private:
+    string name;
+public:
+    User(const string& name) : name(name) {}
+
+    string getName() const {
+        return name;
+    }
+};
+
+class RoomAssignment {
+private:
+    Room room;
+    User user;
+public:
+    RoomAssignment(const Room& room, const User& user) : room(room), user(user) {}
+
+    Room getRoom() const {
+        return room;
+    }
+
+    User getUser() const {
+        return user;
+    }
+};
+
 // Example usage in the main function
 int main() {
      // Create an Admin object
@@ -81,6 +108,23 @@ int main() {
                      Room room1("Standerd", 1000);
             cout << "Room Name: " << room1.getName() << endl;
             cout << "Room Rate: $" << room1.getRate() << "/night" << endl;
+   
+    // RoomAssignment
+            cout << "BOOKED ROOMS.... " << endl;
+            Room room2("Luxurious", 3000); // Corrected typo in room type
+    	    User user1("Ahmad"); // Created User instance
+    	    RoomAssignment roomAssignment(room2, user1); // Passed Room and User instances
+    	    cout << "Assigned Room Type: " << roomAssignment.getRoom().getType() << endl;
+    	    cout << "Assigned Room Price: " << roomAssignment.getRoom().getPrice() << endl;
+    	    cout << "Assigned User: " << roomAssignment.getUser().getName() << endl;
+
+    // RoomAssignment
+            Room rooom1("Standard", 1000); // Corrected typo in room type
+            User user2("Ali"); // Created User instance
+            RoomAssignment roomAssignment1(rooom1, user2); // Passed Room and User instances
+            cout << "Assigned Room Type: " << roomAssignment1.getRoom().getType() << endl;
+            cout << "Assigned Room Price: " << roomAssignment1.getRoom().getPrice() << endl;
+            cout << "Assigned User: " << roomAssignment1.getUser().getName() << endl;
    
 
     return 0;
